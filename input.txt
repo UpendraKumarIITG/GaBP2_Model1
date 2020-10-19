@@ -1,0 +1,48 @@
+##input for ML
+filename = 'descriptor_ABX2.csv'
+drop_column = ['Compound','volume']
+target_header = 'Volume'
+testing_data_fraction = 0.25
+no_of_cross_validation = 100 #minimum accepted value is 2
+random_state = 25  #some random number
+#####################################################################################################################
+
+#model = LinearRegression(fit_intercept=True)
+#model = BaggingRegressor()
+#model = SVR(kernel='rbf', C=10000, gamma=0.01, epsilon=0.01)
+
+#model = PLSRegression(n_components=4)
+
+#model = Ridge(alpha=0.0000001, max_iter=10000, tol=0.00001)
+
+model = Lasso(alpha=0.01,max_iter=100)
+
+#model = KernelRidge(kernel='polynomial', alpha=0.000000001, degree= 5)
+#model = KernelRidge(kernel='rbf', gamma=0.00001, alpha=0.001)
+
+
+#kernel = C(1.0, (1e-3, 1e3)) * RBF(10, (1e-2, 1e2))
+#model = GaussianProcessRegressor(kernel=kernel, n_restarts_optimizer=9)
+
+#model = GradientBoostingRegressor(n_estimators=1000, max_depth = 8, learning_rate = 0.01,min_samples_split=2, min_samples_leaf=3,max_features=4,subsample=0.4)
+
+#model = RandomForestRegressor(n_estimators=500, max_features=14, max_depth=16,bootstrap=True)
+###ANN with scikit-learn
+#model=MLPRegressor(activation='logistic',solver='adam',hidden_layer_sizes=(10000,),max_iter=1000,random_state=4)
+########################################################################################################################## ##
+###matplotlib_input
+
+header=" "
+fig_size1 = 4
+fig_size2 = 4
+dpi = 300
+x_min = 100
+x_max = 600
+y_min = 100
+y_max = 600
+legend_location = 2
+x_label = 'DFT Calculated Volume $(\AA^{3})$'
+y_label = 'Scaling Laws Volume $(\AA^{3})$'
+out_fig_name_and_format = 'volume_test.eps'
+
+
